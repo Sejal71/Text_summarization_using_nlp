@@ -1,0 +1,240 @@
+{
+  "dataset_info": {
+    "name": "Summarization API ROUGE Evaluation Dataset - Enhanced",
+    "version": "2.0",
+    "description": "Human reference dataset with varied complexity levels and edge cases for evaluating ROUGE scores",
+    "total_samples": 15,
+    "content_types": ["educational", "technical", "business", "news", "research_article", "simple_factual", "list_heavy"],
+    "complexity_levels": ["simple", "moderate", "complex"],
+    "evaluation_metrics": ["ROUGE-1", "ROUGE-2", "ROUGE-L"],
+    "summary_target_ratio": 0.4
+  },
+  "samples": [
+    {
+      "id": 1,
+      "content_type": "simple_factual",
+      "complexity_level": "simple",
+      "api_endpoint": "/summarize/text",
+      "source_text": "Cats are popular pets around the world. They are independent animals that don't require as much attention as dogs. Most cats sleep 12-16 hours per day. They use litter boxes for bathroom needs, making them suitable for apartment living. Cats groom themselves by licking their fur. They have excellent night vision and can see in very low light. Many cats enjoy playing with toys like balls and feathers. Regular veterinary checkups are important for cat health. Cats typically live 13-17 years with proper care.",
+      "human_reference_summary": "Cats are independent, popular pets that sleep most of the day and use litter boxes, making them good for apartments. They groom themselves, have great night vision, and live 13-17 years with proper veterinary care.",
+      "expected_length_range": [150, 250],
+      "key_evaluation_points": [
+        "Basic cat characteristics",
+        "Independence trait",
+        "Living requirements",
+        "Lifespan mentioned"
+      ]
+    },
+    {
+      "id": 2,
+      "content_type": "educational",
+      "complexity_level": "simple", 
+      "api_endpoint": "/summarize/text",
+      "source_text": "Learning to cook provides multiple benefits including better health through ingredient control, significant cost savings compared to dining out, and creative stress relief. Cooking skills enable accommodation of dietary needs and restrictions while building kitchen confidence. The practice also strengthens social bonds by bringing people together for shared meals and cultural exchange through traditional recipes.",
+      "human_reference_summary": "Cooking offers health benefits through better ingredient control, saves money versus restaurants, and provides stress relief. It helps with dietary restrictions, builds confidence, and brings people together through shared meals.",
+      "expected_length_range": [200, 300],
+      "key_evaluation_points": [
+        "Health and cost benefits",
+        "Stress relief aspect",
+        "Social benefits",
+        "Skill building"
+      ]
+    },
+    {
+      "id": 3,
+      "content_type": "list_heavy",
+      "complexity_level": "simple",
+      "api_endpoint": "/summarize/text",
+      "source_text": "Here are the top 5 programming languages for beginners:\n\n1. Python - Easy syntax, great for data science and web development\n2. JavaScript - Essential for web development, runs in browsers\n3. Java - Object-oriented, used in enterprise applications\n4. C++ - Powerful language, good for system programming\n5. HTML/CSS - Not programming languages but essential for web design\n\nAdditional considerations:\n• Python has extensive libraries\n• JavaScript frameworks include React and Vue\n• Java is platform-independent\n• C++ offers fine control over system resources\n• HTML/CSS create website structure and styling",
+      "human_reference_summary": "The top 5 beginner programming languages are Python (easy syntax, data science), JavaScript (web development, browser-based), Java (object-oriented, enterprise use), C++ (system programming), and HTML/CSS (web design basics). Each offers unique advantages like Python's libraries, JavaScript's frameworks, Java's platform independence, and C++'s system control.",
+      "expected_length_range": [250, 350],
+      "key_evaluation_points": [
+        "Lists all 5 languages",
+        "Mentions key characteristics",
+        "Explains use cases",
+        "Notes additional benefits"
+      ]
+    },
+    {
+      "id": 4,
+      "content_type": "technical",
+      "complexity_level": "moderate",
+      "api_endpoint": "/summarize/text", 
+      "source_text": "Machine learning model deployment in production environments requires careful consideration of multiple factors to ensure reliable and scalable performance. The deployment pipeline typically begins with model validation using holdout datasets and A/B testing frameworks to compare performance against existing systems. Infrastructure requirements must be assessed, including computational resources, memory allocation, and latency constraints. Containerization using Docker provides consistency across development and production environments. Model versioning systems track changes and enable rollbacks when necessary. Monitoring systems continuously track model performance metrics such as accuracy and inference time. Security considerations include data encryption and authentication. Load balancing distributes requests across multiple model instances to handle varying traffic patterns.",
+      "human_reference_summary": "Production ML deployment requires model validation through A/B testing, infrastructure planning with containerization, and monitoring for performance metrics. Key components include model versioning for rollbacks, security measures for data protection, and load balancing for handling traffic variations.",
+      "expected_length_range": [300, 450],
+      "key_evaluation_points": [
+        "Deployment pipeline basics",
+        "Infrastructure needs",
+        "Monitoring importance", 
+        "Security and scalability"
+      ]
+    },
+    {
+      "id": 5,
+      "content_type": "news",
+      "complexity_level": "simple",
+      "api_endpoint": "/summarize/text",
+      "source_text": "The local library announced new weekend hours starting next month. The library will now be open on Saturdays from 9 AM to 5 PM and Sundays from 1 PM to 5 PM. This change comes after many residents requested weekend access. The library director said the extended hours will help working families and students. Weekend services will include book checkout, computer access, and children's reading programs. The library expects to hire two additional part-time staff members to cover the new hours. Funding for the extended hours comes from the city's annual budget allocation.",
+      "human_reference_summary": "The local library will extend hours to include weekends starting next month, open Saturdays 9 AM-5 PM and Sundays 1 PM-5 PM. The change responds to resident requests and will help working families access services including book checkout, computers, and children's programs, with funding from the city budget.",
+      "expected_length_range": [200, 300],
+      "key_evaluation_points": [
+        "New hours specified",
+        "Reason for change",
+        "Services available",
+        "Staffing and funding"
+      ]
+    },
+    {
+      "id": 6,
+      "content_type": "business",
+      "complexity_level": "moderate",
+      "api_endpoint": "/summarize/text",
+      "source_text": "The quarterly financial report shows strong performance with total revenue increasing 15% year-over-year to reach $2.4 billion. The technology division led growth with a 22% increase, driven by cloud services. Manufacturing operations contributed $800 million in revenue with stable 8% growth. The company reduced operating expenses by 5% through automation, improving profit margins from 18% to 21%. Customer acquisition costs decreased by 12% due to better digital marketing. International markets showed 28% growth, particularly in Asia-Pacific. The debt-to-equity ratio improved to 0.35, indicating strong financial health. R&D investments increased to $180 million, focusing on AI and sustainable technology. The board approved a 10% dividend increase.",
+      "human_reference_summary": "Strong quarterly performance showed 15% revenue growth to $2.4 billion, led by technology division's 22% increase from cloud services. Operating efficiency improved with 5% expense reduction and margins expanding to 21%, while international markets grew 28%. Strong financials enabled increased R&D investment in AI and a 10% dividend increase.",
+      "expected_length_range": [300, 450],
+      "key_evaluation_points": [
+        "Revenue growth figures",
+        "Division performance",
+        "Efficiency improvements",
+        "International success"
+      ]
+    },
+    {
+      "id": 7,
+      "content_type": "research_article",
+      "complexity_level": "complex",
+      "api_endpoint": "/summarize/text",
+      "source_text": "This study examined the cognitive benefits of cooking interventions in older adults aged 65-85. A randomized controlled trial involving 240 participants compared a 12-week cooking program against standard activities. Participants in the cooking group showed significant improvements in executive function (p<0.001), working memory (p=0.003), and processing speed (p=0.009) compared to controls. The cooking intervention included meal planning, ingredient preparation, and cooking techniques taught in 2-hour sessions twice weekly. Executive function scores improved by an average of 12.3 points (95% CI: 8.1-16.5). Working memory showed a 15% improvement from baseline compared to 3% in the control group. Processing speed increased by 8.7% in the cooking group versus 1.2% decline in controls. Benefits were sustained at 3-month follow-up, suggesting lasting cognitive enhancement.",
+      "human_reference_summary": "A randomized trial of 240 older adults found that a 12-week cooking program significantly improved cognitive function compared to standard activities. Participants showed improvements in executive function (12.3 points), working memory (15% increase), and processing speed (8.7% increase). The twice-weekly sessions produced lasting benefits at 3-month follow-up, suggesting cooking interventions could maintain cognitive health in aging adults.",
+      "expected_length_range": [350, 500],
+      "key_evaluation_points": [
+        "Study design and sample",
+        "Specific cognitive improvements",
+        "Statistical significance",
+        "Lasting benefits noted"
+      ]
+    },
+    {
+      "id": 8,
+      "content_type": "technical",
+      "complexity_level": "simple",
+      "api_endpoint": "/summarize/text",
+      "source_text": "Cloud storage offers several advantages over traditional local storage. Files stored in the cloud can be accessed from any device with internet connection. This makes it easy to work on documents from different computers or share files with team members. Cloud storage also provides automatic backups, reducing the risk of data loss from hardware failures. Most cloud services offer version history, allowing users to recover older versions of files. Popular cloud storage services include Google Drive, Dropbox, and Microsoft OneDrive. Security is handled by the service provider, including encryption and regular updates. Cloud storage typically costs less than maintaining local servers for businesses.",
+      "human_reference_summary": "Cloud storage allows file access from any internet-connected device and easy sharing with teams. It provides automatic backups, version history, and professional security management. Popular services include Google Drive, Dropbox, and OneDrive, often costing less than local servers for businesses.",
+      "expected_length_range": [200, 350],
+      "key_evaluation_points": [
+        "Access flexibility",
+        "Backup and version benefits", 
+        "Popular service examples",
+        "Cost advantages"
+      ]
+    },
+    {
+      "id": 9,
+      "content_type": "educational",
+      "complexity_level": "moderate",
+      "api_endpoint": "/summarize/text",
+      "source_text": "Effective time management requires systematic goal setting and prioritization using tools like the Eisenhower Matrix, combined with techniques such as time blocking and the Pomodoro Technique for focused work sessions. Success depends on establishing daily routines, learning to decline non-essential commitments, and leveraging technology tools while maintaining core organizational skills. Regular strategy review, proper self-care through sleep and exercise, and aligning demanding tasks with personal energy patterns optimize productivity and prevent burnout. The Pomodoro Technique involves 25-minute work periods followed by 5-minute breaks. Time blocking schedules specific periods for different activities to ensure focused work without distractions.",
+      "human_reference_summary": "Effective time management combines goal setting with prioritization tools like the Eisenhower Matrix and techniques like time blocking and Pomodoro (25-minute work sessions with breaks). Success requires daily routines, saying no to non-essentials, and balancing technology use with organizational skills, while proper self-care and energy management prevent burnout.",
+      "expected_length_range": [250, 400],
+      "key_evaluation_points": [
+        "Specific techniques mentioned",
+        "Technology balance",
+        "Self-care importance",
+        "Routine establishment"
+      ]
+    },
+    {
+      "id": 10,
+      "content_type": "simple_factual",
+      "complexity_level": "simple",
+      "api_endpoint": "/summarize/text",
+      "source_text": "Water boils at 100 degrees Celsius (212 degrees Fahrenheit) at sea level. This temperature is called the boiling point. At higher altitudes, water boils at lower temperatures because of reduced air pressure. For example, in Denver, Colorado, water boils at about 94 degrees Celsius. Adding salt to water slightly raises the boiling point. This is why pasta water with salt takes a bit longer to boil.",
+      "human_reference_summary": "Water boils at 100°C (212°F) at sea level, but boils at lower temperatures at higher altitudes due to reduced air pressure. Adding salt slightly raises the boiling point, which is why salted pasta water takes longer to boil.",
+      "expected_length_range": [100, 200],
+      "key_evaluation_points": [
+        "Basic boiling point",
+        "Altitude effect",
+        "Salt effect example",
+        "Practical application"
+      ]
+    },
+    {
+      "id": 11,
+      "content_type": "business",
+      "complexity_level": "complex",
+      "api_endpoint": "/summarize/text",
+      "source_text": "Digital transformation initiatives are reshaping how companies operate, compete, and deliver value to customers. Successful transformation requires strategic alignment between technology investments and business objectives. Companies must first assess their current digital maturity across key areas including customer experience, operational processes, and employee engagement. Leadership commitment is essential, with C-suite executives actively championing change and allocating sufficient resources. Cultural transformation often proves more challenging than technological implementation, requiring employee training, change management, and new performance metrics. Data analytics capabilities enable evidence-based decision making and personalized customer experiences. Cloud computing provides the scalable infrastructure necessary for modern digital operations. Artificial intelligence and machine learning automate routine tasks while providing insights from large datasets. Customer-centric approaches prioritize user experience across all digital touchpoints, from websites to mobile applications. Agile methodologies accelerate development cycles and improve responsiveness to market changes. Cybersecurity considerations become paramount as digital footprints expand, requiring robust protection strategies. Partnerships with technology vendors and consulting firms can provide expertise and accelerate implementation. Measuring success through key performance indicators ensures transformation efforts align with business goals and deliver measurable returns on investment.",
+      "human_reference_summary": "Successful digital transformation requires strategic alignment of technology investments with business goals, starting with digital maturity assessment across customer experience, operations, and employee engagement. Leadership commitment and cultural change management are crucial, often more challenging than technical implementation. Core enablers include data analytics for decision-making, cloud infrastructure for scalability, and AI/ML for automation and insights. Customer-centric design, agile methodologies, robust cybersecurity, and strategic partnerships accelerate transformation while KPI measurement ensures ROI alignment with business objectives.",
+      "expected_length_range": [400, 600],
+      "key_evaluation_points": [
+        "Strategic transformation approach",
+        "Cultural and leadership factors",
+        "Technology enablers and infrastructure",
+        "Customer-centric methodology",
+        "Success measurement criteria"
+      ]
+    },
+    {
+      "id": 12,
+      "content_type": "technical",
+      "complexity_level": "complex",
+      "api_endpoint": "/summarize/text",
+      "source_text": "Kubernetes offers multiple deployment strategies each optimized for different scenarios: recreate strategy provides simplicity with complete downtime, rolling updates maintain availability while gradually replacing pods, and blue-green deployments enable instant rollbacks with zero downtime. Advanced strategies include canary deployments for gradual traffic shifting and risk mitigation, A/B testing for version comparison, and shadow deployments for safe real-world testing without user impact. The recreate strategy terminates all existing pods before creating new ones, resulting in complete downtime but ensuring no resource conflicts. Rolling updates allow configuration of maxUnavailable and maxSurge parameters to control the update pace. Blue-green deployments maintain two identical production environments, switching traffic between them instantly. Canary deployments gradually shift traffic to new versions, allowing real-world testing with minimal impact by deploying to a small subset of users first. Strategy selection should consider application architecture, resource constraints, downtime tolerance, and specific testing requirements.",
+      "human_reference_summary": "Kubernetes provides multiple deployment strategies for different needs: recreate (simple but with downtime), rolling updates (gradual replacement maintaining availability), blue-green (instant rollbacks with zero downtime), canary (gradual traffic shifting for risk reduction), A/B testing (version comparison), and shadow deployments (safe testing without user impact). Strategy choice depends on application architecture, resources, downtime tolerance, and testing needs.",
+      "expected_length_range": [350, 500],
+      "key_evaluation_points": [
+        "Multiple strategy types",
+        "Advantages and trade-offs",
+        "Technical implementation details",
+        "Selection criteria"
+      ]
+    },
+    {
+      "id": 13,
+      "content_type": "simple_factual",
+      "complexity_level": "simple",
+      "api_endpoint": "/summarize/text",
+      "source_text": "Recycling helps protect the environment by reducing waste in landfills. Common recyclable materials include paper, plastic bottles, aluminum cans, and glass containers. Different materials go in different recycling bins - usually marked with numbers or colors. Clean containers recycle better than dirty ones, so rinse them first. Recycling saves energy because making products from recycled materials uses less energy than making them from scratch. Many communities have curbside recycling pickup once a week.",
+      "human_reference_summary": "Recycling reduces landfill waste and saves energy by reusing materials like paper, plastic, aluminum, and glass. Clean containers should be sorted into appropriate bins, and many communities offer weekly curbside pickup for convenience.",
+      "expected_length_range": [100, 200],
+      "key_evaluation_points": [
+        "Environmental benefits",
+        "Common materials listed",
+        "Sorting and cleaning process",
+        "Energy savings mentioned"
+      ]
+    },
+    {
+      "id": 14,
+      "content_type": "news",
+      "complexity_level": "moderate",
+      "api_endpoint": "/summarize/text",
+      "source_text": "City council unanimously approved a $150 million, three-year plan to combat housing affordability crisis by building 2,500 new affordable units and supporting existing homeowners. The initiative provides down payment assistance up to $50,000 for first-time buyers, emergency foreclosure aid, and zoning reforms to encourage mixed-income development. The plan includes construction of 2,500 new affordable housing units, with 40% designated for families earning less than 60% of the median income. Additionally, the city will provide down payment assistance programs and emergency assistance funds for homeowners facing foreclosure. Implementation starts next month with a dedicated housing authority office overseeing the program, while partnerships with nonprofits and developers will accelerate construction. Mayor Johnson emphasized that housing is a fundamental right and bold action is necessary to ensure all residents have access to safe, affordable homes.",
+      "human_reference_summary": "City council approved a $150 million, three-year housing plan to build 2,500 affordable units and support homeowners through down payment assistance up to $50,000 and foreclosure aid. The plan includes zoning reforms for mixed-income development and starts next month with a dedicated housing authority office and nonprofit partnerships to accelerate construction.",
+      "expected_length_range": [250, 400],
+      "key_evaluation_points": [
+        "Financial commitment and timeline",
+        "Specific housing targets",
+        "Support programs details",
+        "Implementation approach"
+      ]
+    },
+    {
+      "id": 15,
+      "content_type": "list_heavy",
+      "complexity_level": "simple",
+      "api_endpoint": "/summarize/text",
+      "source_text": "Essential items for a basic emergency kit:\n\n• Water: 1 gallon per person per day for 3 days\n• Food: 3-day supply of non-perishable food\n• Flashlight and extra batteries\n• First aid kit with bandages and medications\n• Radio (battery or hand-crank)\n• Cell phone charger (portable)\n• Cash and credit cards\n• Important documents in waterproof container\n• Blankets and warm clothing\n• Personal hygiene items\n• Tools: wrench for gas shut-off, manual can opener\n• Local area maps\n\nAdditional considerations:\n- Replace water and food every 6 months\n- Check battery levels quarterly\n- Update documents annually\n- Consider special needs (baby formula, pet supplies)",
+      "human_reference_summary": "A basic emergency kit should include water (1 gallon per person for 3 days), non-perishable food, flashlight with batteries, first aid supplies, radio, phone charger, cash, important documents, blankets, hygiene items, basic tools, and maps. Update supplies regularly - water and food every 6 months, batteries quarterly, and documents annually.",
+      "expected_length_range": [200, 300],
+      "key_evaluation_points": [
+        "Core supplies listed",
+        "Specific quantities given",
+        "Maintenance schedule",
+        "Special considerations noted"
+      ]
+    }
+  ]
+}
